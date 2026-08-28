@@ -201,6 +201,18 @@
     .final-rooming{break-before:page;page-break-before:always;}
   }
 
+  /* ===== Content tabs ===== */
+  .page-panel{display:none;}
+  .page-panel.active{display:block;}
+  .info-section{margin:28px 40px;padding:22px 24px;background:#F3EBDD;border:1px solid var(--line);border-radius:8px;color:var(--ink-soft);}
+  .info-section h3{margin:0 0 15px;font-family:"Noto Serif TC",serif;color:var(--ink);font-size:20px;}
+  .info-section h4{margin:18px 0 7px;font-family:"Noto Serif TC",serif;color:var(--ink);font-size:15px;}
+  .info-section p{margin:7px 0;line-height:1.75;font-size:13px;}
+  .info-section ul{margin:7px 0 0 20px;padding:0;}
+  .info-section li{margin:6px 0;line-height:1.7;font-size:13px;}
+  .fee-highlight{font-weight:800;color:var(--ink);}
+  @media(max-width:760px){.info-section{margin:20px 18px;padding:18px}}
+
   /* ===== Trip essentials ===== */
   .essentials{
     display:grid;
@@ -540,6 +552,8 @@
 </div>
 </div>
 <div class="estimate-note">⏰ 以下所有時間皆為<b>預估時間</b>，實際將依當日交通、天候與現場狀況彈性調整，屆時會請<b>小幫手</b>於車上或 LINE 群提醒。</div>
+<div class="page-panel active" id="trip-panel">
+
 
 <!-- ============ DAY 1 ============ -->
 <section class="day1">
@@ -615,7 +629,7 @@
 </div></div>
 <div class="body">
 <div class="title-row"><span class="name">全聯大湖台三店</span><span class="dur">採買約35分</span></div>
-<p class="desc">補貨時間到！零食飲料通通掃一輪，順手帶點大湖在地小物再上路。</p>
+<p class="desc">補貨時間到！零食飲料通通掃一輪，順手帶點大湖在地小物再上路。<br><b>💡 提醒：</b>前後銜接時間較緊湊（約10分鐘），實際發車時間請以現場領隊/司機指示為準，若延誤將順延後續行程。</p>
 </div>
 </div>
 <div class="stop highlight">
@@ -669,13 +683,13 @@
 <p class="day-blurb">睡到自然醒、再泡一次美人湯，吃完早餐才依依不捨退房。接著鑽進豆腐老街嗑美食、走進巧克力莊園當一天貴族，把苗栗的滋味一路帶回家。</p>
 <div class="timeline">
 <div class="stop">
-<div class="time">08:30</div>
+<div class="time">07:30</div>
 <div class="icon-wrap"><div class="icon-badge">
 <svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"></path></svg>
 </div></div>
 <div class="body">
 <div class="title-row"><span class="name">飯店早餐＋自由泡湯</span></div>
-<p class="desc">落地窗外滿眼山景配早餐，吃飽再泡一回溫泉，把身體徹底喚醒，準備迎接第二天！<br><b>早餐供應時間：</b>第一場 07:30～09:00 ／ 第二場 09:30～11:00</p>
+<p class="desc">落地窗外滿眼山景配早餐，吃飽再泡一回溫泉，把身體徹底喚醒，準備迎接第二天！<br><b>早餐供應時間：</b>第一場 07:30～09:00 ／ 第二場 09:30～11:00<br><b>⚠️ 提醒：</b>10:30 即需退房，建議選擇「第一場 07:30～09:00」用餐，才有充裕時間再泡一次湯；若選第二場恐來不及退房。</p>
 </div>
 </div>
 <div class="stop">
@@ -685,7 +699,7 @@
 </div></div>
 <div class="body">
 <div class="title-row"><span class="name">退房、行李上車</span></div>
-<p class="desc">收拾好行囊，帶著昨晚泡湯後的好氣色，繼續往下一站前進。</p>
+<p class="desc">收拾好行囊，帶著昨晚泡湯後的好氣色，繼續往下一站前進。<br><b>💡 提醒：</b>接下來與清安豆腐街、巧克力雲莊的銜接時間都抓得比較緊，請大家動作加快，行李盡量提前整理好。</p>
 </div>
 </div>
 <div class="stop highlight">
@@ -747,7 +761,7 @@
 </div></div>
 <div class="body">
 <div class="title-row"><span class="name">關西服務區</span><span class="dur">約20分</span></div>
-<p class="desc">回程最後一次休息，伸個懶腰，準備收心返回樹林。</p>
+<p class="desc">回程最後一次休息，伸個懶腰，準備收心返回樹林。<br><b>💡 提醒：</b>此時段接近平日傍晚下班尖峰，國道車流可能較多，抵達時間僅供參考，請耐心等候。</p>
 </div>
 </div>
 <div class="stop">
@@ -762,70 +776,64 @@
 </div>
 </div>
 </section>
-<div class="notes">
-<h3><svg viewbox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5Z"></path><path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>貼心小提醒</h3>
-<div class="note-grid">
-<div class="note-item"><span class="dot"></span><span><b>泡湯備品：</b>建議自備泳衣泳帽（部分公共池需要），飯店裸湯區則不需要，個人盥洗用品飯店多有提供。</span></div>
-<div class="note-item"><span class="dot"></span><span><b>保暖衣物：</b>10月山區早晚溫差較大，記得帶件薄外套，別讓自己涼颼颼。</span></div>
-<div class="note-item"><span class="dot"></span><span><b>山路提醒：</b>從汶水轉入苗62往泰安方向後，山路彎道會增加；容易暈車的夥伴建議提前服用暈車藥。</span></div>
-
-<div class="note-item"><span class="dot"></span><span><b>集合時間：</b>08:45 中信房屋樹林中山店準時集合，遲到可是會被溫泉水噴喔（開玩笑的，但真的別遲到）。</span></div>
+<div class="info-section">
+  <h3>♨️ 溫泉與飯店須知</h3>
+  <h4>泡湯</h4>
+  <p>戶外泡湯池、按摩池、游泳池、男／女裸湯、烤箱及蒸氣室等設施，請依會館現場開放時間及使用規定為準。</p>
+  <h4>泡湯用品</h4>
+  <p>建議攜帶泳衣泳帽備用；裸湯區則依會館規定使用。</p>
+  <h4>山區氣候</h4>
+  <p>10 月山區早晚溫差較大，建議攜帶薄外套。</p>
+  <h4>山路提醒</h4>
+  <p>離開汶水遊客中心後進入苗62往泰安方向，山路彎道較多，容易暈車的夥伴請提前做好準備。</p>
+  <h4>住宿提醒</h4>
+  <p>會館全館禁菸，並請遵守館內相關規定，避免使用會影響其他房客休息的擴音設備。</p>
 </div>
+
+<div class="info-section">
+  <h3>💰 費用說明</h3>
+  <p>本次員工旅遊，<span class="fee-highlight">員工本人費用由公司負擔</span>。</p>
+  <h4>家眷費用</h4>
+  <ul>
+    <li>家眷行程費：<span class="fee-highlight">$4,500／人</span></li>
+    <li>已包含全程餐費、車資、門票、保險及相關雜支。</li>
+  </ul>
+  <h4>住宿費用</h4>
+  <p>因飯店房型及床位配置不同，<span class="fee-highlight">有攜帶家眷同行，或因入住人數、房型安排而產生的住宿價差，將由個人負擔。</span></p>
+  <p>目前房型已依實際入住人數及床位配置完成安排。</p>
+  <p>實際需補繳的住宿費用，將於旅遊行程結束後，<span class="fee-highlight">另行私訊通知需補繳的同仁</span>。</p>
+  <p>※ 實際費用依飯店最終房價及入住安排計算。</p>
+  <p>※ 如有房型調整需求，需自行與其他同仁協調；若因此產生房價差額，則由相關人員自行負擔，公司不另補貼因換房產生的價差。</p>
 </div>
-<div class="notes hotel-rules">
-<h3><svg viewbox="0 0 24 24"><circle cx="12" cy="15" r="5.5"></circle><path d="M9 4c1 1.5 1 3 0 4.5M12 3c1 1.5 1 3 0 4.5M15 4c1 1.5 1 3 0 4.5"></path></svg>泰安觀止｜溫泉設施使用須知</h3>
-<div class="note-grid single">
-<div class="note-item"><span class="dot"></span><span>戶外泡湯池、按摩池、游泳池、男／女裸湯、烤箱、蒸氣室，皆為<b>無限次數使用</b>，泡好泡滿不用趕時間。</span></div>
-<div class="note-item"><span class="dot"></span><span><b>開放時段：</b>週一～週日　上午 07:00～11:00、下午 14:00～22:00。</span></div>
-<div class="note-item"><span class="dot"></span><span>會館<b>全館禁菸</b>（包含房間內），禁止使用毒品及施用毒品行為，如經查獲將報警處理。</span></div>
-<div class="note-item"><span class="dot"></span><span>為顧及住客慢活定位，館內<b>不得使用卡拉OK設備</b>及任何可能打擾其他住宿客人休息的擴音設備，敬請留意。</span></div>
-<div class="note-item"><span class="dot"></span><span>晚餐餐廳<b>每桌贈送 2 瓶果汁</b>，現場亦提供飲料與酒類單點；<b>自備酒水每桌酌收 NT$500 開瓶費</b>，謝謝配合。</span></div>
+
+<div class="info-section">
+  <h3>🛍️ 自由活動與個人自費</h3>
+  <p>以下行程屬自由活動或個人採買，相關費用請自行負擔：</p>
+  <ul>
+    <li>清安豆腐街</li>
+    <li>全聯大湖台三店</li>
+    <li>垂坤食品旗艦店</li>
+    <li>個人購物及伴手禮</li>
+    <li>其他個人消費</li>
+  </ul>
 </div>
+
+<div class="info-section">
+  <h3>📌 行前提醒</h3>
+  <ul>
+    <li>08:45 請準時於中信房屋樹林中山店集合。</li>
+    <li>行程時間為預估時間，將依當日交通、天候及現場狀況彈性調整。</li>
+    <li>山路路段較多，容易暈車者請提前準備。</li>
+    <li>10 月山區早晚溫差較大，建議攜帶薄外套。</li>
+    <li>房型已確認，如需調整請自行協調，產生的房價差額由相關人員自行負擔。</li>
+    <li>實際需補繳的家眷及住宿費用，將於行程結束後另行通知。</li>
+  </ul>
 </div>
-<div class="rooming-note final-rooming">
-  <div class="rooming-head">
-    <div class="title">🏨 住宿分房</div>
-    <div class="meta">19 組／47 人</div>
-  </div>
-
-  <div class="room-group">
-    <div class="room-group-title">1–2人房</div>
-    <div class="room-grid">
-      <div class="room-item"><div class="room-number">R208</div><div class="room-guests">羅怡芳、眷屬 <span class="count">｜2人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R209</div><div class="room-guests">蔡美鳳、眷屬 <span class="count">｜2人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R210</div><div class="room-guests">張東盛、林義全 <span class="count">｜2人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R502</div><div class="room-guests">熊志芳、眷屬 <span class="count">｜2人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R506</div><div class="room-guests">徐意筑、黃廣成 <span class="count">｜2人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R508</div><div class="room-guests">陳勝旗、眷屬 <span class="count">｜2人</span><span class="type">一館</span></div></div>
-
-      <div class="room-item"><div class="room-number">R118</div><div class="room-guests">林齊家 <span class="count">｜1人</span><span class="type">二館</span></div></div>
-      <div class="room-item"><div class="room-number">R119</div><div class="room-guests">王菲、（揚揚眷屬） <span class="count">｜2人</span><span class="type">二館</span></div></div>
-      <div class="room-item"><div class="room-number">R120</div><div class="room-guests">余慧貞、眷屬 <span class="count">｜2人</span><span class="type">二館</span></div></div>
-      <div class="room-item"><div class="room-number">R215</div><div class="room-guests">李麗英、潘語豪 <span class="count">｜2人</span><span class="type">二館</span></div></div>
-      <div class="room-item"><div class="room-number">R216</div><div class="room-guests">賴佳君、曾令宜 <span class="count">｜2人</span><span class="type">二館</span></div></div>
-      <div class="room-item"><div class="room-number">R217</div><div class="room-guests">陳翰霖、鄭字溱 <span class="count">｜2人</span><span class="type">二館</span></div></div>
-
-      <div class="room-item"><div class="room-number">R603</div><div class="room-guests">賴蓉蓉、眷屬 <span class="count">｜2人</span><span class="type">三館</span></div></div>
-    </div>
-  </div>
-
-  <div class="room-group">
-    <div class="room-group-title">3–4人房</div>
-    <div class="room-grid">
-      <div class="room-item"><div class="room-number">R101</div><div class="room-guests">馬重義、眷屬 × 2 <span class="count">｜3人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R102</div><div class="room-guests">張懷文、林采萱、游晴 <span class="count">｜3人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R103</div><div class="room-guests">謝烱揚、邱義哲、李建泳、顏志明 <span class="count">｜4人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R105</div><div class="room-guests">林慧盷+眷屬、倪安茹、李品嫻 <span class="count">｜4人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R110</div><div class="room-guests">陳淑娟、白菀莉、白妍甄、王如墨 <span class="count">｜4人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R111</div><div class="room-guests">何惠雯、毛顯慧、邱金鈴、戴藝芬 <span class="count">｜4人</span><span class="type">一館</span></div></div>
-    </div>
-  </div>
 </div>
 
 <div class="signoff">
 <div class="mark">祝旅途平安・泡湯愉快</div>
 <div class="small">MIAOLI · TAIAN AUTUMN JOURNEY　2026.10.20 － 10.21</div>
-</div>
 </div>
 </body>
 </html>
