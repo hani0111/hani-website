@@ -11,25 +11,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&amp;family=Noto+Sans+TC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root{
-    --paper:#F7F1E4;
-    --paper-2:#FBF7EE;
-    --ink:#2B2620;
-    --ink-soft:#5C5245;
-    --line:#DCD1B4;
-    --pine:#33473A;
-    --pine-2:#243329;
-    --day1:#B8632B;
-    --day1-soft:#F2E2CB;
-    --day1-line:#E3C39B;
-    --day2:#2F6B6C;
-    --day2-soft:#DCEAE7;
-    --day2-line:#A9CBC9;
-    --gold:#B4923E;
+    --paper:#FFF9EE;
+    --paper-2:#FFF3E1;
+    --ink:#3D2A18;
+    --ink-soft:#8A5A34;
+    --line:#F3C578;
+    --pine:#146C5B;
+    --pine-2:#0D4A3E;
+    --day1:#E8622C;
+    --day1-soft:#FFE2CB;
+    --day1-line:#FFAD73;
+    --day2:#0EA5A0;
+    --day2-soft:#CFF3EF;
+    --day2-line:#6FDCD3;
+    --gold:#F0A733;
+    --gold-soft:#FFE8B8;
+    --hall3:#8B5FBF;
+    --hall3-soft:#EAE0F7;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
-    background:#EDE4D0;
+    background:linear-gradient(180deg,#FBE9CE 0%,#F5DDB8 100%);
     color:var(--ink);
     font-family:"Noto Sans TC",sans-serif;
     line-height:1.75;
@@ -122,6 +125,12 @@
     font-size:12px;
     color:var(--ink-soft);
   }
+  .hall-legend{display:flex;flex-wrap:wrap;gap:10px 18px;margin:2px 0 22px;padding:12px 16px;background:rgba(255,255,255,0.5);border-radius:10px;}
+  .hall-legend .item{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-soft);font-weight:700;}
+  .hall-legend .swatch{width:12px;height:12px;border-radius:4px;flex:none;}
+  .hall-legend .swatch.h1{background:linear-gradient(135deg,var(--day1),#F5924F);}
+  .hall-legend .swatch.h2{background:linear-gradient(135deg,var(--day2),#3FC9BE);}
+  .hall-legend .swatch.h3{background:linear-gradient(135deg,var(--hall3),#AF8BDA);}
   .room-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -134,23 +143,30 @@
     align-items:center;
     min-height:46px;
     padding:8px 10px;
-    background:var(--paper-2);
+    background:rgba(255,255,255,0.55);
     border:1px solid var(--line);
-    border-radius:6px;
+    border-left:4px solid var(--line);
+    border-radius:8px;
   }
+  .room-item.hall-1{border-left-color:var(--day1);}
+  .room-item.hall-2{border-left-color:var(--day2);}
+  .room-item.hall-3{border-left-color:var(--hall3);}
   .room-number{
     display:flex;
     align-items:center;
     justify-content:center;
     min-height:28px;
     border:1px solid var(--line);
-    border-radius:4px;
-    color:var(--ink);
+    border-radius:6px;
+    color:#fff;
     font-weight:700;
     font-family:"Noto Serif TC",serif;
     font-size:12px;
-    background:#fffdf7;
+    background:var(--ink-soft);
   }
+  .room-item.hall-1 .room-number{background:linear-gradient(135deg,var(--day1),#F5924F);border-color:transparent;}
+  .room-item.hall-2 .room-number{background:linear-gradient(135deg,var(--day2),#3FC9BE);border-color:transparent;}
+  .room-item.hall-3 .room-number{background:linear-gradient(135deg,var(--hall3),#AF8BDA);border-color:transparent;}
   .room-guests{
     font-size:12.5px;
     line-height:1.55;
@@ -176,23 +192,31 @@
   }
   .rooming-note.final-rooming .rooming-head{margin-bottom:18px;}
   .rooming-note.final-rooming .title{font-size:22px;}
-  .room-group{margin-top:20px;}
+  .room-group{margin-top:24px;}
   .room-group:first-of-type{margin-top:0;}
   .room-group-title{
-    display:flex;align-items:baseline;gap:10px;
-    margin:0 0 10px;
-    padding-bottom:6px;
-    border-bottom:1px solid var(--line);
+    display:flex;align-items:center;gap:10px;
+    margin:0 0 12px;
+    padding:8px 16px;
+    border-bottom:none;
+    border-radius:999px;
+    width:fit-content;
     font-family:"Noto Serif TC",serif;
-    font-size:15px;font-weight:700;color:var(--ink);
+    font-size:14px;font-weight:900;color:#fff;
+    background:linear-gradient(135deg,var(--pine),#1B7A66);
+    box-shadow:0 4px 10px rgba(20,108,91,0.28);
   }
-  .room-group-title small{font-family:"Noto Sans TC",sans-serif;font-size:11px;font-weight:400;color:var(--ink-soft);}
+  .room-group-title small{font-family:"Noto Sans TC",sans-serif;font-size:11px;font-weight:400;color:#EAF6F1;}
   .room-guests .type{
     display:block;
     color:var(--ink-soft);
     font-size:0.85em;
+    font-weight:700;
     margin-top:2px;
   }
+  .room-item.hall-1 .room-guests .type{color:var(--day1);}
+  .room-item.hall-2 .room-guests .type{color:var(--day2);}
+  .room-item.hall-3 .room-guests .type{color:var(--hall3);}
   .final-rooming .rooming-foot{
     margin-top:16px;padding-top:10px;border-top:1px dashed var(--line);
     font-size:11.5px;color:var(--ink-soft);text-align:right;
@@ -523,38 +547,43 @@
 </style>
 </head>
 <body><div class="sheet">
-<div class="rooming-note final-rooming" style="break-before:auto;page-break-before:auto;margin:0;padding:38px 40px 34px;border-left:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;background:var(--paper-2);">
+<div class="rooming-note final-rooming" style="break-before:auto;page-break-before:auto;margin:0;padding:38px 40px 34px;border-left:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;background:linear-gradient(180deg,var(--paper-2) 0%,#FBEBD2 100%);">
   <div class="rooming-head">
     <div class="title">🏨 住宿房號（內部）</div>
     <div class="meta">僅供內部使用</div>
   </div>
+  <div class="hall-legend">
+    <div class="item"><span class="swatch h1"></span>一館</div>
+    <div class="item"><span class="swatch h2"></span>二館</div>
+    <div class="item"><span class="swatch h3"></span>三館</div>
+  </div>
   <div class="room-group">
-    <div class="room-group-title">1–2人房</div>
+    <div class="room-group-title">🛏️ 1–2人房</div>
     <div class="room-grid">
-      <div class="room-item"><div class="room-number">R208</div><div class="room-guests">羅怡芳、眷屬 <span class="count">｜2人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R209</div><div class="room-guests">蔡美鳳、眷屬 <span class="count">｜2人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R210</div><div class="room-guests">張東盛、林義全 <span class="count">｜2人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R502</div><div class="room-guests">熊志芳、眷屬 <span class="count">｜2人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R506</div><div class="room-guests">徐意筑、黃廣成 <span class="count">｜2人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R508</div><div class="room-guests">陳勝旗、眷屬 <span class="count">｜2人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R118</div><div class="room-guests">林齊家 <span class="count">｜1人</span><span class="type">二館</span></div></div>
-      <div class="room-item"><div class="room-number">R119</div><div class="room-guests">王菲、（揚揚眷屬） <span class="count">｜2人</span><span class="type">二館</span></div></div>
-      <div class="room-item"><div class="room-number">R120</div><div class="room-guests">余慧貞、眷屬 <span class="count">｜2人</span><span class="type">二館</span></div></div>
-      <div class="room-item"><div class="room-number">R215</div><div class="room-guests">李麗英、潘語豪 <span class="count">｜2人</span><span class="type">二館</span></div></div>
-      <div class="room-item"><div class="room-number">R216</div><div class="room-guests">賴佳君、曾令宜 <span class="count">｜2人</span><span class="type">二館</span></div></div>
-      <div class="room-item"><div class="room-number">R217</div><div class="room-guests">陳翰霖、鄭字溱 <span class="count">｜2人</span><span class="type">二館</span></div></div>
-      <div class="room-item"><div class="room-number">R603</div><div class="room-guests">賴蓉蓉、眷屬 <span class="count">｜2人</span><span class="type">三館</span></div></div>
+      <div class="room-item hall-1"><div class="room-number">R208</div><div class="room-guests">羅怡芳、眷屬 <span class="count">｜2人</span><span class="type">一館</span></div></div>
+      <div class="room-item hall-1"><div class="room-number">R209</div><div class="room-guests">蔡美鳳、眷屬 <span class="count">｜2人</span><span class="type">一館</span></div></div>
+      <div class="room-item hall-1"><div class="room-number">R210</div><div class="room-guests">張東盛、林義全 <span class="count">｜2人</span><span class="type">一館</span></div></div>
+      <div class="room-item hall-1"><div class="room-number">R502</div><div class="room-guests">熊志芳、眷屬 <span class="count">｜2人</span><span class="type">一館</span></div></div>
+      <div class="room-item hall-1"><div class="room-number">R506</div><div class="room-guests">徐意筑、黃廣成 <span class="count">｜2人</span><span class="type">一館</span></div></div>
+      <div class="room-item hall-1"><div class="room-number">R508</div><div class="room-guests">陳勝旗、眷屬 <span class="count">｜2人</span><span class="type">一館</span></div></div>
+      <div class="room-item hall-2"><div class="room-number">R118</div><div class="room-guests">林齊家 <span class="count">｜1人</span><span class="type">二館</span></div></div>
+      <div class="room-item hall-2"><div class="room-number">R119</div><div class="room-guests">王菲、（揚揚眷屬） <span class="count">｜2人</span><span class="type">二館</span></div></div>
+      <div class="room-item hall-2"><div class="room-number">R120</div><div class="room-guests">余慧貞、眷屬 <span class="count">｜2人</span><span class="type">二館</span></div></div>
+      <div class="room-item hall-2"><div class="room-number">R215</div><div class="room-guests">李麗英、潘語豪 <span class="count">｜2人</span><span class="type">二館</span></div></div>
+      <div class="room-item hall-2"><div class="room-number">R216</div><div class="room-guests">賴佳君、曾令宜 <span class="count">｜2人</span><span class="type">二館</span></div></div>
+      <div class="room-item hall-2"><div class="room-number">R217</div><div class="room-guests">陳翰霖、鄭字溱 <span class="count">｜2人</span><span class="type">二館</span></div></div>
+      <div class="room-item hall-3"><div class="room-number">R603</div><div class="room-guests">賴蓉蓉、眷屬 <span class="count">｜2人</span><span class="type">三館</span></div></div>
     </div>
   </div>
   <div class="room-group">
-    <div class="room-group-title">3–4人房</div>
+    <div class="room-group-title">🛋️ 3–4人房</div>
     <div class="room-grid">
-      <div class="room-item"><div class="room-number">R101</div><div class="room-guests">馬重義、眷屬 × 2 <span class="count">｜3人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R102</div><div class="room-guests">張懷文、林采萱、游晴 <span class="count">｜3人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R103</div><div class="room-guests">謝烱揚、邱義哲、李建泳、顏志明 <span class="count">｜4人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R105</div><div class="room-guests">林慧盷+眷屬、倪安茹、李品嫻 <span class="count">｜4人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R110</div><div class="room-guests">陳淑娟、白菀莉、白妍甄、王如墨 <span class="count">｜4人</span><span class="type">一館</span></div></div>
-      <div class="room-item"><div class="room-number">R111</div><div class="room-guests">何惠雯、毛顯慧、邱金鈴、戴藝芬 <span class="count">｜4人</span><span class="type">一館</span></div></div>
+      <div class="room-item hall-1"><div class="room-number">R101</div><div class="room-guests">馬重義、眷屬 × 2 <span class="count">｜3人</span><span class="type">一館</span></div></div>
+      <div class="room-item hall-1"><div class="room-number">R102</div><div class="room-guests">張懷文、林采萱、游晴 <span class="count">｜3人</span><span class="type">一館</span></div></div>
+      <div class="room-item hall-1"><div class="room-number">R103</div><div class="room-guests">謝烱揚、邱義哲、李建泳、顏志明 <span class="count">｜4人</span><span class="type">一館</span></div></div>
+      <div class="room-item hall-1"><div class="room-number">R105</div><div class="room-guests">林慧盷+眷屬、倪安茹、李品嫻 <span class="count">｜4人</span><span class="type">一館</span></div></div>
+      <div class="room-item hall-1"><div class="room-number">R110</div><div class="room-guests">陳淑娟、白菀莉、白妍甄、王如墨 <span class="count">｜4人</span><span class="type">一館</span></div></div>
+      <div class="room-item hall-1"><div class="room-number">R111</div><div class="room-guests">何惠雯、毛顯慧、邱金鈴、戴藝芬 <span class="count">｜4人</span><span class="type">一館</span></div></div>
     </div>
   </div>
 </div>
